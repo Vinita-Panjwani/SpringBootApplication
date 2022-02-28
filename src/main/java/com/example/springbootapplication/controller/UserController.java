@@ -29,7 +29,7 @@ public class UserController {
     // -------------------Create a User-------------------------------------------
 
     @RequestMapping(value = "/createUser/", method = RequestMethod.POST)
-    public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
+    public ResponseEntity<String> createUser(@RequestBody User user) {
         logger.info("Creating User : {}", user);
 
         if (userService.isUserExist(user)) {
